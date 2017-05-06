@@ -70,7 +70,7 @@ $id = $_SESSION[$USER_session];
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
 <title>イベントファイルの集計</title>
-
+<link rel="stylesheet" href="admin/admin_style.css?ver=170414">
 <!-- jquery ライブラリ -->
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 

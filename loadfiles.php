@@ -5,7 +5,7 @@ include_once("admin/include.php");
 ini_set( 'display_errors', "1" ); 
 ini_set( 'display_startup_errors', "1" ); 
 
-
+date_default_timezone_set('Asia/Tokyo');
 //ファイルの一覧を表示する
 //$flist   = getFileList("files/");
 if(isset($_GET['dir'])){
@@ -211,7 +211,6 @@ user_header($sub_title , "loadxml_init()");
 
 	//fields_File追加
 	print('var fields_File = "' . $fields_File . '";' . $cr);
-
 ?>
 
 function loadxml_init(){
