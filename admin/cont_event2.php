@@ -1,6 +1,6 @@
 <?php
 include_once("include.php");
-
+date_default_timezone_set('Asia/Tokyo');
 $ThisFile   = "cont_event2.php";
 //$NextFile   = $_SESSION["NextJob"];
 //$ReturnFile = $_SESSION['CallJob'];

@@ -1,6 +1,6 @@
 <?php
 include_once("include.php");
-
+date_default_timezone_set('Asia/Tokyo');
 $ThisFile   = "log_in.php";
 @$NextFile   = $_SESSION["NextJob"];
 @$ReturnFile = $_SESSION['CallJob'];
@@ -85,7 +85,7 @@ if($_POST["log_in_flg"]==""){
 		}
 
 		//*** ハッシュ暗号化（sha256）
-		$user_pass = hash("sha256" , $_POST["log_in_pass"]);
+		//$user_pass = hash("sha256" , $_POST["log_in_pass"]);
 
 		$rcflg = false;
 		//データは１から
@@ -101,7 +101,7 @@ if($_POST["log_in_flg"]==""){
 			common_header("ログイン：エラー");
 			echo '
  	          	<form method="POST"  name="log_in_form"   id="log_in_form" action="' . $ThisFile . '">
-                  	<p class="info">IDまたはパスワードが違います<p>
+                  	<p class="info">IDまたはパスワードが違います(nouser)<p>
 					<div class="btns">
 						<input type="hidden" name="log_in_flg"    id="log_in_flg"    value="" >
 						<input type="submit" name="log_in_submit" id="log_in_submit" value="戻る">
@@ -120,7 +120,7 @@ if($_POST["log_in_flg"]==""){
 			common_header("ログイン：エラー");
 			echo '
  	          	<form method="POST"  name="log_in_form"   id="log_in_form" action="' . $ThisFile . '">
-                  	<p class="info">IDまたはパスワードが違います<p>
+                  	<p class="info">IDまたはパスワードが違います(activeerror)<p>
 					<div class="btns">
 						<input type="hidden" name="log_in_flg"    id="log_in_flg"    value="" >
 						<input type="submit" name="log_in_submit" id="log_in_submit" value="戻る">
@@ -197,7 +197,7 @@ if($_POST["log_in_flg"]==""){
 			//print("あなたは　" . $id . "（" . $name . "）さんですね。<br>");
 			echo '
 			<form method="POST"  name="log_in_form"   id="log_in_form" action="' . $ThisFile . '">
-				<p class="info">IDまたはパスワードが違います<p>
+				<p class="info">IDまたはパスワードが違います(final)<p>
 				<div class="btns">
 					<input type="hidden" name="log_in_flg"    id="log_in_flg" value="" >
 					<input type="submit" name="log_in_submit" id="log_in_submit" value="戻る">

@@ -3,7 +3,7 @@
 session_cache_limiter('none');
 //セッションの開始
 @session_start();
-
+date_default_timezone_set('Asia/Tokyo');
 //ユーザ管理共通のセッション
 $USER_session  = "NOTALONE_USER";   //USER IDのセッション用環境変数名
 $LEVEL_session = "NOTALONE_LEVEL";  //USER LEVELのセッション用環境変数名
@@ -29,9 +29,9 @@ $PAGESTART_session = "NOTALONE_PAGESTART";	//表示開始のページ番号
 //ini_set( 'display_startup_errors', "1" ); 
 
 
-//このサイトのディレクトリ
+//このサイトのディレクトリ【初期設定データ】
 //$SITE_dir = "test/";	//サブディレクトリの場合
-$SITE_dir ="/";			//ルートの場合
+$SITE_dir ="notalone/";			//ルートの場合
 
 //このアプリケーションのルートディレクトリ
 $ROOT_dir    = $SITE_dir . "admin/";
@@ -140,7 +140,7 @@ function user_header($title,$onload=NULL){
 	if($_SESSION[$USER_session] == ""){
 		$include_dir = dirname($_SERVER["SCRIPT_NAME"])."/";
 		//$file_name = basename($_SERVER['PHP_SELF']);
-		if($include_dir==="//" || $include_dir==="/" || $include_dir==="/noto/"){$css_dir = "admin/";}else{$css_dir = "./";}
+		if($include_dir==="//" || $include_dir==="/" || $include_dir==="/notalone/"){$css_dir = "./admin";}else{$css_dir = "./";}
 		//print("ログインしていません<br>");
 		//print("<hr>");
 		header('Location:'.$css_dir.'log_in.php');
@@ -207,7 +207,7 @@ function common_menu($ptn){
 			");
 			break;
 		case 1 :
-			print("<a class='btn btn_modoru' href='" . $SITE_dir . "admin/index.php'>管理ページトップへ戻る</a>　");
+			print("<a class='btn btn_modoru' href='" . "admin/index.php'>管理ページトップへ戻る</a>　");
 	}
 	print('</div>');
 }
